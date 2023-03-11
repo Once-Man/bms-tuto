@@ -1,0 +1,51 @@
+<%- include('../layouts/admin-header') %>
+    <div id="content" class="p-4 p-md-5 pt-5">
+            <h2 class="mb-4">Add Post</h2>
+            <% if(typeof message !== 'undefined'){ %>
+                
+                <div class="alert alert-success alert-dismissible fade show">
+                    <strong><%= message %></strong>
+                    <button type="button" class="close btn btn-sm btn-warning" data-dismiss="alert">&times;</button>
+                   
+                </div>
+            <% } %>
+            <form action="/create-post" method="POST">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h5>Title</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <input type="text" name="title" placeholder="Enter Post Title" class="w-100" required>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-sm-12">
+                        <input type="file" name="image" class="w-100">
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-sm-12">
+                        <h5>Content</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <textarea name="content" class="w-100" rows="5" placeholder="Enter Post Content" required></textarea>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col-sm-12">
+                        <input type="submit" class="btn btn-primary" value="Add Post">
+                    </div>
+                </div>
+            </form>
+        
+    </div>
+
+<%- include('../layouts/admin-footer') %>
+
+        

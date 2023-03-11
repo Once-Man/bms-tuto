@@ -1,0 +1,91 @@
+<%- include('./layouts/header.ejs') %>
+
+<%- include('./layouts/navbar.ejs') %>
+
+    <div class="row">
+        <div class="col-lg-6 mt-5">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Blog Setup</h4>
+                </div>
+                <div class="card-body">
+                    <form action="/blog-setup" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <div class="row mt-3">
+                                <div class="col-sm-20">
+                                    <label for="title">Title</label>
+                                    <input type="text" class="form-control" name="blog_title" placeholder="Enter Blog Title" required>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <div class="row mt-3">
+                                <div class="col-sm-20">
+                                    <label for="image">Image</label>
+                                    <input type="file" class="form-control" name="blog_image" placeholder="Enter Blog Image" required>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <div class="row mt-3">
+                                <div class="col-sm-20">
+                                    <label for="description">Description</label>
+                                    <textarea name="description" class="form-control" placeholder="Enter Description" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <div class="row mt-3">
+                                <div class="col-sm-20">
+                                    <label for="name">Admin Name</label>
+                                    <input type="text" class="form-control" name="name" placeholder="Enter Admin Name" required>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <div class="row mt-3">
+                                <div class="col-sm-20">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" placeholder="Enter Email" name="email" required>
+                                </div>
+                            </div>
+                        </div>  
+    
+                        <div class="form-group">
+                            <div class="row mt-3">
+                                <div class="col-sm-20">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-sm-20">
+                                <input type="submit" class="btn btn-primary btn-sm" value="Blog Setup">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer bg-dark mt-3">
+                    <h6 class="text-center text-white">Everyday is precious. What is your precious for today.</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    
+
+    <%
+        if(typeof message !== 'undefined'){
+            
+            %>
+            <p style="color:red;"><%= message %></p>
+            <%
+
+        }
+    %>
+<%- include('./layouts/footer.ejs') %>
